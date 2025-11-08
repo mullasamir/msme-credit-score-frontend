@@ -15,7 +15,7 @@ function Chat() {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/chat", { message: input });
+      const res = await axios.post("https://msme-credit-score-backend.onrender.com/chat", { message: input });
       const botMessage = { role: "bot", text: res.data.reply };
       setMessages((prev) => [...prev, botMessage]);
     } catch (err) {

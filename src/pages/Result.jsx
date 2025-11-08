@@ -24,9 +24,9 @@ const Result = () => {
   }
 
   const riskConfig = {
-    Low: { color: 'from-green-500 to-emerald-600', icon: CheckCircle, badge: 'text-green-600 bg-green-100' },
-    Medium: { color: 'from-yellow-500 to-orange-600', icon: AlertCircle, badge: 'text-orange-600 bg-orange-100' },
-    High: { color: 'from-red-500 to-rose-600', icon: XCircle, badge: 'text-red-600 bg-red-100' }
+    "Low Risk": { color: 'from-green-500 to-emerald-600', icon: CheckCircle, badge: 'text-green-600 bg-green-100' },
+    "Medium Risk": { color: 'from-yellow-500 to-orange-600', icon: AlertCircle, badge: 'text-orange-600 bg-orange-100' },
+    "High Risk": { color: 'from-red-500 to-rose-600', icon: XCircle, badge: 'text-red-600 bg-red-100' }
   };
 
   const config = riskConfig[risk];
@@ -45,7 +45,7 @@ const Result = () => {
 
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-            Credit Risk: <span className={`bg-gradient-to-r ${config.color} bg-clip-text text-transparent`}>{risk}</span>
+            Credit Risk: <span className={`bg-gradient-to-r ${ config.color} bg-clip-text text-transparent`}>{risk}</span>
           </h1>
           <div className={`inline-flex items-center px-6 py-2 rounded-full ${config.badge} font-semibold text-sm`}>
             <config.icon className="h-5 w-5 mr-2" />
@@ -74,14 +74,15 @@ const Result = () => {
         <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Input Summary</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+           
             {[
-              ['Revenue', `₹${formData.monthly_revenue}`],
-              ['Electricity', `₹${formData.electricity_bill}`],
-              ['UPI Volume', `₹${formData.upi_volume}`],
-              ['Digital Reciepts', `₹${formData.digital_rec}`],
-              ['GST', formData.gst_registered],
-              ['Age', `${formData.business_age} years`],
-              ['Loans', `₹${formData.outstanding_loans}`]
+              ['Revenue', `₹${formData.revenue}`],
+              ['Electricity', `₹${formData.electricity}`],
+              ['UPI Volume', `${formData.upi_txn}`],
+              ['Digital Reciepts', `₹${formData.receipts}`],
+              ['GST', formData.gst],
+              ['Shop Age', `${formData.age} years`],
+              ['Mobile - Topup', `${formData.topups}`]
             ].map(([label, value]) => (
               <div key={label} className="flex justify-between py-2 border-b border-gray-100">
                 <span className="text-gray-600">{label}:</span>

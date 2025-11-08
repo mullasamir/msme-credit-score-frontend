@@ -5,12 +5,10 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Login from './pages/Login';
-import Register from './pages/Register';
 import './App.css';
-import Contact from './pages/Contact';
 import Assess from './pages/Assess';
 import Result from './pages/Result';
+import Chat from './pages/Chat';
 
 function App() {
   return (
@@ -31,8 +29,8 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/assess" element={<Assess />} />
                 <Route path="/result" element={<Result />} />
-                {/* <Route path="/register" element={<Register />} />
-                <Route path="/contact" element={<Contact />} /> */}
+                <Route path="/chat" element={<Chat />} />
+            
                 
               </Routes>
             </motion.div>
